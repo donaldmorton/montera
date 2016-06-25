@@ -1,0 +1,303 @@
+{% extends "templates/partials/base.html" %}
+{% set inmueblesVenta = cms.inmuebles |where('tipo_contrato','Venta') |slice(0,6)%}
+   {% block content %}
+<section style="margin-top:-20px;background-color:#ffffff;">
+  <div class="container">
+    <div class="col-md-3"style="background-color:#ffffff">
+      <div class="input-group"style="border-right-color:#ededed;border-left-color:#ededed">
+        <input type="text" class="form-control" placeholder="Que estas buscando?" style="font-family:formularLight;background-color:#ffffff;height:55px;border-color:#ffffff;box-shadow:none;">
+        <span class="input-group-btn">
+          <button class="btn " type="button"style="background-color:transparent;"><i class="glyphicon glyphicon-search"style="font-size:22px;color:#ededed"></i></button>
+        </span>
+      </div>
+    </div>
+    <div class="col-md-1"style="padding:0px;">
+        <button class="btn" type="submit"style=";width:100%;border-radius:0px;background-color:#ffffff;height:55px;font-size:16px;border-left-color:#ededed;font-size:14px;"><span style="font-family: formularBold;color: #3d3d3d">Comprar</span></button>
+    </div>
+    <div class="col-md-1"style="padding:0px">
+      <button class="btn" type="submit"style=";width:100%;border-radius:0px;background-color:#ffffff;height:55px;font-size:16px;border-color:ededed;border-left-color:#ededed;font-size:14px"><span style="font-family: formularBold;color: #3d3d3d">Rentar</span></button>
+    </div>
+    <div class="col-md-2"style="padding:0px">
+      <div class="dropdown">
+        <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"style=";width:100%;border-radius:0px;background-color:#ffffff;height:55px;font-size:16px;border-color:ededed;border-left-color:#ededed;font-size:14px">
+          <span style="font-family: formularBold;color: #3d3d3d">Tipo de propiedad</span>
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <label class="checkbox"style="margin-left:35px">
+            <input type="checkbox" id="inlineCheckbox1" value="option1"> Terreno
+          </label>
+          <label class="checkbox"style="margin-left:35px">
+            <input type="checkbox" id="inlineCheckbox2" value="option2"> Casa
+          </label>
+          <label class="checkbox"style="margin-left:35px">
+            <input type="checkbox" id="inlineCheckbox3" value="option3"> Oficina
+          </label>
+          <label class="checkbox"style="margin-left:35px">
+            <input type="checkbox" id="inlineCheckbox3" value="option3"> Departamento
+          </label>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-1"style="padding:0px">
+      <div class="dropdown">
+        <button class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"style=";width:100%;border-radius:0px;background-color:#ffffff;height:55px;font-size:16px;border-color:ededed;border-left-color:#ededed;font-size:14px">
+          <span style="font-family: formularBold;color: #3d3d3d">Zona</span>
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <label class="checkbox"style="margin-left:35px">
+            <input type="checkbox" id="inlineCheckbox1" value="option1"> Sur
+          </label>
+          <label class="checkbox"style="margin-left:35px">
+            <input type="checkbox" id="inlineCheckbox2" value="option2"> Centro
+          </label>
+          <label class="checkbox"style="margin-left:35px">
+            <input type="checkbox" id="inlineCheckbox3" value="option3"> Poniente
+          </label>
+          <label class="checkbox"style="margin-left:35px">
+            <input type="checkbox" id="inlineCheckbox3" value="option3"> Oriente
+          </label>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-1"style="padding:0px">
+      <div class="dropdown">
+        <button class="btn dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"style=";width:100%;border-radius:0px;background-color:#ffffff;height:55px;font-size:16px;border-color:ededed;border-left-color:#ededed;font-size:14px">
+          <span style="font-family: formularBold;color: #3d3d3d">Precio</span>
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1"style="width:300px;margin-left:-187px">
+        <div class="col-md-4">
+          <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"placeholder="Min">
+        </div>
+        <div class="col-md-4"style="margin-top:7px">
+        <center>  <p style="width:100%;font-size:16px">-</p></center>
+        </div>
+        <div class="col-md-4">
+          <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"placeholder="Max">
+        </div>
+          </ul>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-1"style="padding:0px;">
+      <div class="dropdown"style="">
+        <button class="btn dropdown-toggle" type="button" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"style=";width:100%;border-radius:0px;background-color:#d9d9d9;height:55px;font-size:16px;border-color:transparent;font-size:14px">
+          <span style="font-family: formularBold;color: #3d3d3d">Más filtros</span>
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1"style="width:585px;margin-left:-490px">
+          <div class="col-md-4">
+            <div class="dropdown">
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenu4A" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"style=";width:100%;border-radius:0px;background-color:#ffffff;height:55px;font-size:16px;border-color:#ededed">
+                Baños
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <label class="checkbox"style="margin-left:35px">
+                  <input type="checkbox" id="inlineCheckbox1" value="option1"> Sur
+                </label>
+                <label class="checkbox"style="margin-left:35px">
+                  <input type="checkbox" id="inlineCheckbox2" value="option2"> Centro
+                </label>
+                <label class="checkbox"style="margin-left:35px">
+                  <input type="checkbox" id="inlineCheckbox3" value="option3"> Poniente
+                </label>
+                <label class="checkbox"style="margin-left:35px">
+                  <input type="checkbox" id="inlineCheckbox3" value="option3"> Oriente
+                </label>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="dropdown">
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"style=";width:100%;border-radius:0px;background-color:#ffffff;height:55px;font-size:16px;border-color:#ededed;">
+              MP de costrucción
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <label class="checkbox"style="margin-left:35px">
+                  <input type="checkbox" id="inlineCheckbox1" value="option1"> Sur
+                </label>
+                <label class="checkbox"style="margin-left:35px">
+                  <input type="checkbox" id="inlineCheckbox2" value="option2"> Centro
+                </label>
+                <label class="checkbox"style="margin-left:35px">
+                  <input type="checkbox" id="inlineCheckbox3" value="option3"> Poniente
+                </label>
+                <label class="checkbox"style="margin-left:35px">
+                  <input type="checkbox" id="inlineCheckbox3" value="option3"> Oriente
+                </label>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="dropdown">
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenu4A" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"style="width:100%;border-radius:0px;background-color:#ffffff;height:55px;font-size:16px;border-color:#ededed;">
+                Zona
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <label class="checkbox"style="margin-left:35px">
+                  <input type="checkbox" id="inlineCheckbox1" value="option1"> Sur
+                </label>
+                <label class="checkbox"style="margin-left:35px">
+                  <input type="checkbox" id="inlineCheckbox2" value="option2"> Centro
+                </label>
+                <label class="checkbox"style="margin-left:35px">
+                  <input type="checkbox" id="inlineCheckbox3" value="option3"> Poniente
+                </label>
+                <label class="checkbox"style="margin-left:35px">
+                  <input type="checkbox" id="inlineCheckbox3" value="option3"> Oriente
+                </label>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-4"style="margin-top:15px">
+            <div class="dropdown">
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenu4A" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"style="width:100%;border-radius:0px;background-color:#ffffff;height:55px;font-size:16px;border-color:#ededed;">
+                Recámaras
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <label class="checkbox"style="margin-left:35px">
+                  <input type="checkbox" id="inlineCheckbox1" value="option1"> Sur
+                </label>
+                <label class="checkbox"style="margin-left:35px">
+                  <input type="checkbox" id="inlineCheckbox2" value="option2"> Centro
+                </label>
+                <label class="checkbox"style="margin-left:35px">
+                  <input type="checkbox" id="inlineCheckbox3" value="option3"> Poniente
+                </label>
+                <label class="checkbox"style="margin-left:35px">
+                  <input type="checkbox" id="inlineCheckbox3" value="option3"> Oriente
+                </label>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4"style="margin-top:15px">
+            <div class="dropdown">
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenu4A" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"style="width:100%;border-radius:0px;background-color:#ffffff;height:55px;font-size:16px;border-color:#ededed;">
+                Superficie terreno
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <label class="checkbox"style="margin-left:35px">
+                  <input type="checkbox" id="inlineCheckbox1" value="option1"> Sur
+                </label>
+                <label class="checkbox"style="margin-left:35px">
+                  <input type="checkbox" id="inlineCheckbox2" value="option2"> Centro
+                </label>
+                <label class="checkbox"style="margin-left:35px">
+                  <input type="checkbox" id="inlineCheckbox3" value="option3"> Poniente
+                </label>
+                <label class="checkbox"style="margin-left:35px">
+                  <input type="checkbox" id="inlineCheckbox3" value="option3"> Oriente
+                </label>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4"style="margin-top:15px">
+            <div class="dropdown">
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenu4A" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"style="width:100%;border-radius:0px;background-color:#ffffff;height:55px;font-size:16px;border-color:#ededed;">
+                Estacionamiento
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <label class="checkbox"style="margin-left:35px">
+                  <input type="checkbox" id="inlineCheckbox1" value="option1"> Sur
+                </label>
+                <label class="checkbox"style="margin-left:35px">
+                  <input type="checkbox" id="inlineCheckbox2" value="option2"> Centro
+                </label>
+                <label class="checkbox"style="margin-left:35px">
+                  <input type="checkbox" id="inlineCheckbox3" value="option3"> Poniente
+                </label>
+                <label class="checkbox"style="margin-left:35px">
+                  <input type="checkbox" id="inlineCheckbox3" value="option3"> Oriente
+                </label>
+              </ul>
+            </div>
+          </div>
+
+        </ul>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-2"style="padding:0px">
+      <button class="btn"data-toggle="modal"data-target="#modalGuardar" type="submit"style=";width:100%;border-radius:0px;background-color:#ffcc00;height:55px;font-size:16px;border-color:transparent"><span style="font-family: formularBold;color: #3d3d3d">Guardar búsqueda</span></button>
+    </div>
+  </div>
+</section>
+
+<section style="background-color:#f2f2f2">
+<div class="container">
+  <div class="col-md-12">
+    <br>
+    <h2  style="color:#000000" class="nD">100 resultados en la Herradura</h2>
+    <h5 class="fL">Mostrar por relevancia <i class="glyphicon glyphicon-menu-down"></i></h5>
+    <br>
+  </div>
+  <div class="col-md-8">
+         {% for inmueble in inmueblesVenta %}
+         <div class="col-md-6" style="height:430px">
+            <div class="thumbnail"style="padding:0px;box-shadow: 0px 0px 5px rgba(3, 3, 3, 0.11)">
+               <img class="Descripcion" style="height:250px" src="{{ inmueble.galleria[0].url }}">
+               <div class="caption" style="padding:15px;padding-top:0px">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <table class="table" style="margin:0px">
+                           <tr>
+                              <td>
+                                 <b>{{inmueble.name}}</b>
+                                 <p class="colonia">{{inmueble.colonia}}</p>
+                              </td>
+                              <td>
+                                 <h3 style="margin-top:11px" class="fL pull-right">[[{{inmueble.precio}}|currency:"$":0]]</h3>
+                              </td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div class="col-md-12 col-sm-12"style="margin-top:0px">
+                        <hr style="margin-top:0px">
+                        <a href="{{url(inmueble)}}"><div class="btn botonGris" style="border: 1px solid;border-radius: 0px;" role="button">MÁS INFORMACIÓN</div></a>
+                        <div style="display:inline;float: right;">
+                           <div id="carta"data-toggle="modal" data-target="#myModal"class="btn botonGris" style="border: 1px solid;border-radius: 0px;width: 45px;padding: 3px;padding-top: 6px;margin-right:10px" type="submit"style="height:34px;width:40px"><img src="/static/images/carta.svg"style="width:100%;margin-top:-5px;opacity:.8"/></div>
+                           <div id="tachuela"class="btn botonGris" style="border: 1px solid;border-radius: 0px;width: 45px;padding: 3px;padding-top: 6px" type="submit"style="height:34px;width:40px"><img src="/static/images/tachuela.svg"style="width:92%;margin-top:-4px;opacity:.4"/></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         {% endfor %}
+  <div class="col-md-12">
+    <center><nav>
+      <ul class="pagination"style="margin-top:0px;margin-bottom:50px">
+        <li>
+          <a href="#" aria-label="Previous"style="background-color:#f2f2f2">
+            <span aria-hidden="true"style="color:#ededed"><i class="glyphicon glyphicon-chevron-left"></i></span>
+          </a>
+        </li>
+        <li><a href="#"style="background-color:#f2f2f2;color:#ededed">1</a></li>
+        <li><a href="#"style="background-color:#f2f2f2;color:#ededed">2</a></li>
+        <li><a href="#"style="background-color:#f2f2f2;color:#ededed">100</a></li>
+        <li>
+          <a href="#" aria-label="Next"style="background-color:#f2f2f2">
+            <span aria-hidden="true"style="color:#ededed"><i class="glyphicon glyphicon-chevron-right"></i></span>
+          </a>
+        </li>
+      </ul>
+    </nav></center>
+  </div>
+</div>
+<div class="col-md-4">
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3594.6273551922777!2d-100.39389028516953!3d25.716759316736084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x866296ff79179727%3A0x8558218e92f06ada!2sJuan+E.+L%C3%B3pez+2800%2C+Cumbres+4%C2%BA.+Sector+Secc+C%2C+64619+Monterrey%2C+N.L.!5e0!3m2!1ses!2smx!4v1464673798515" width="600" height="800" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>
+</div>
+
+</section>
+
+      {% endblock %}

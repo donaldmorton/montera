@@ -1,0 +1,63 @@
+.navbar1{
+  color:#000000;
+  font-size: 16px;
+}
+h2{
+  font-family: bold;
+  color:#000000;
+}
+b{
+  font-size: 16px;
+}
+.colonia{
+  font-size:13px;
+  font-family: formularLight;
+}
+.botonGris{
+  background-color: white;
+  border-color:#808080;
+  color:rgb(193, 190, 190);
+  opacity:.8;
+  height:38px;
+  border: 1px solid;
+   border-radius: 0px;
+   font-family: FormularBold;
+}
+.imgCarousel{
+  width:1400px;
+  height: 200px;
+}
+.Descripcion{
+  width:500px;
+}
+@media (max-width:1000px) {
+  #carta{
+    width: 60px;
+}
+@media (max-width:1000px) {
+  #tachuela{
+    width: 60px;
+}
+@media (max-width:1000px) {
+  #efecto{
+    margin-top:-44px;
+}
+.btnAmarillo{
+  background-color:#ffcc00;
+}
+.amarillo{
+  background-color:#ffcc00;
+}
+.imagenConstructora{
+  height: 500px;
+}
+.colorPagination{
+  background-color: #f2f2f2;
+}
+.inmobiliaria{
+  background-color:#ffffff;
+  height:55px;
+  border-color:#ffffff;
+  box-shadow:none;
+  font-size:16px;
+}

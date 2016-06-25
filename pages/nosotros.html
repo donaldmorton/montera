@@ -1,0 +1,76 @@
+{# ------------------------------------------------------- #}
+{# ONE OFF VIEW nosotros #}
+{# This page can use any data from http:localhost:2000/cms/#/form/nosotros/ #}
+{# Webhook uses the SWIG.js (like Djagno/Twig) templating system. Their documentation is here: #}
+{# http://paularmstrong.github.io/swig/docs/tags/ #}
+{# Learn about calling data into Webhook pages here: #}
+{# http://www.webhook.com/docs/template-rules-and-filters/ #}
+{# ------------------------------------------------------- #}
+{# Confused what extends and blocks do? Watch a primer: #}
+{# http://www.webhook.com/docs/template-inheritance-blocks/ #}
+{% extends "templates/partials/base.html" %}
+{# This sets our page <title>. It will append this nosotros's name to the site title defined in base.html #}
+{% block title %}{% parent %} - {{ cms.nosotros.name }}{% endblock %}
+{% block content %}
+
+<section>
+<div style="width:100%;height:600px;margin-top:-21px;background:url(http://senderoslatinoamericanos.org/wp-content/uploads/2013/03/Colombia_cerro-batero.jpg)no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;"></div>
+</section>
+
+<section style="background-color:#f2f2f2">
+  <div class="container">
+    <br>
+    <div class="col-md-7">
+      <h1 class="nD"style="line-height:50px;color:#000000;font-size:35px;opacity:.8">Orgullosamente regios, desde el 2000 <font color="ffcc00">Montera</font> ofrece los servicios para la compra, venta y renta de inmuebles y construcción de casa habitación. Duis aute irure dolor in in voluptate velit cillum dolore eu fugiat nulla paria. Construimos y desarrollamos valor.</h1>
+    </div>
+    <div class="col-md-4 col-md-offset-1">
+      <br>
+      <br>
+      <b class="fB" style="font-size:12px">MISIÓN</b>
+      <br>
+      <br>
+      <p class="fL"style="line-height:25px;font-size:16px;opacity:.5">Desde el 2000, Montera ofrece los servicios para compra, venta y renta de inmuebles y construcción de casa habitación.</p>
+      <br>
+      <br>
+      <b class="fB"style="font-size:12px">VISIÓN</b>
+      <br>
+      <br>
+      <p class="fL"style="line-height:25px;font-size:16px;opacity:.5">Desde el 2000, Montera ofrece los servicios para compra, venta y renta de inmuebles y construcción de casa habitación.</p>
+    </div>
+  </div>
+  <br>
+</section>
+
+<section style="background-color:#f2f2f2">
+  <div class="container">
+    <br>
+    <div class="col-md-12">
+      <h1 class="nD"style="font-size:53px;opacity:.8">Nuestros principios</h1>
+      <hr style="background-color:#000000;height:1px">
+    </div>
+    <div id="efecto"class="col-md-4"style="margin-top:-28px">
+      <p style="font-size:24px;color:#000000"align=right>|</p>
+    </div>
+    <div id="efecto"class="col-md-4"style="margin-top:-28px">
+      <p style="font-size:24px;color:#000000"align=right>|</p>
+    </div>
+    <div class="col-md-4"style="margin-top:-28px">
+      <p style="font-size:24px;color:#f2f2f2"align=right>|</p>
+    </div>
+    <div class="col-md-4">
+      <p class="fL"style="font-size:16px;line-height:20px;opacity:.6"><font color="#ffcc00;font-size:16px">1</font><b style="font-size:20px"> Nos enfocamos en encontrar la mejor propiedad para ti, nos esforzamos por lorem ipsum sit amet.</b></p>
+    </div>
+    <div class="col-md-4">
+      <p class="fL"style="font-size:16px;line-height:20px;opacity:.6"><font color="#ffcc00;font-size:16px">2</font><b style="font-size:20px"> Nos enfocamos en encontrar la mejor propiedad para ti, nos esforzamos por lorem ipsum sit amet.</b></p>
+    </div>
+    <div class="col-md-4">
+      <p class="fL"style="font-size:16px;line-height:20px;opacity:.6"><font color="#ffcc00;font-size:16px">3</font><b style="font-size:20px"> Nos enfocamos en encontrar la mejor propiedad para ti, nos esforzamos por lorem ipsum sit amet.</b></p>
+    </div>
+  </div>
+  <br><br><br><br>
+</section>
+{% endblock %}

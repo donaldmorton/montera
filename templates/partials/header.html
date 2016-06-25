@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default" style="box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);z-index: 1000;border-radius:0px">
+   <div class="container" style="padding:10px;">
+     <!-- Brand and toggle get grouped for better mobile display -->
+     <div class="navbar-header">
+       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </button>
+       <a class="navbar-brand" href="/"><img src="/static/images/montera.png"style="width: 150px;margin-top: -5px" /></a>
+     </div>
+
+     <!-- Collect the nav links, forms, and other content for toggling -->
+     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+       <ul class="nav navbar-nav navbar-right">
+         <li><a href="/inmobiliaria"class="navbar1 fB"style="color:#515151;font-size:13px">INMOBILIARIA </a></li>
+         <li><a href="/constructora"class="navbar1 fB" style="color:#515151;font-size:13px">CONSTRUCTORA </a></li>
+         <li><a href="/favoritos"class="navbar1 fB" style="color:#515151;font-size:13px">FAVORITOS </a></li>
+         <li ng-show="searchShow">
+            <input type="text" class="form-control" placeholder="En que casa quieres vivir?" style="font-family: formularLight;border-radius: 2px;background-color: #ffffff;height: 35px;border-color: #a6a6a6;box-shadow: none;/* border-right-color: transparent; */margin-top: 8px;">
+         </li>
+         <li><a ng-click="searchShow=!searchShow" class="navbar1 fB" style="color:#515151;font-size:13px"><img src="/static/images/search2.svg" style="height:23px"> </a></li>
+       </ul>
+     </div><!-- /.navbar-collapse -->
+   </div><!-- /.container-fluid -->
+</nav>

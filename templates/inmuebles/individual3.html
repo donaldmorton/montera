@@ -1,0 +1,146 @@
+{# ------------------------------------------------------- #}
+{# INDIVIDUAL VIEW FOR EACH inmuebles #}
+{# This page can use any data from http:localhost:2000/cms/#/form/inmuebles/ #}
+{# Webhook uses the SWIG.js (like Djagno/Twig) templating system. Their documentation is here: #}
+{# http://paularmstrong.github.io/swig/docs/tags/ #}
+{# Learn about calling data into Webhook pages here: #}
+{# http://www.webhook.com/docs/template-rules-and-filters/ #}
+{# ------------------------------------------------------- #}
+{# Confused what extends and blocks do? Watch a primer: #}
+{# http://www.webhook.com/docs/template-inheritance-blocks/ #}
+{% extends "templates/partials/base.html" %}
+{# This sets our page <title>. It will append this inmuebles's name to the site title defined in base.html #}
+{% block title %}{% parent %} - {{ item.name }}{% endblock %}
+{% block content %}
+ <section style="margin-top:-19px;background-color:#ffffff;">
+   <div class="container" style="padding:0px">
+     <div class="col-md-4"style="background-color:#ffffff">
+       <div class="input-group"style="border-right-color:#a6a6a6;border-left-color:#a6a6a6;margin-top:8px;margin-bottom:5px">
+         <input type="text" class="form-control" placeholder="En que casa quieres vivir? "style="border-radius:2px;background-color:#ffffff;height:35px;border-color:#a6a6a6;box-shadow:none;border-right-color:transparent">
+         <span class="input-group-btn">
+           <button class="btn " type="button"style="border-radius:2px;background-color:transparent;border-color:#a6a6a6;height:35px;border-left-color:transparent"><i class="glyphicon glyphicon-search"style="color:#a6a6a6"></i></button>
+         </span>
+       </div>
+     </div>
+     <div class="col-md-1 col-md-offset-3"style="margin-top:7px;padding:5px">
+         <button class="btn fB" type="submit"style=";border-radius:2px;background-color:#ffffff;height:35px;font-size:16px;border-color:#a6a6a6;font-size:12px;margin-top:-3px">COMPARTIR</button>
+     </div>
+     <div class="col-md-2"style="margin-top:7px;padding:5px">
+       <button class="btn fB" type="submit"style=";border-radius:2px;background-color:#ffffff;height:35px;font-size:16px;border-color:#a6a6a6;font-size:12px;width:100%;margin-top:-3px;"><i class="glyphicon glyphicon-print"style="color:#a6a6a6"></i> IMPRIMIR</button>
+     </div>
+     <div class="col-md-2"style="margin-top:7px;padding:5px">
+       <button class="btn fB" type="submit"style=";border-radius:2px;background-color:#ffffff;height:35px;font-size:16px;border-color:#a6a6a6;font-size:12px;width:100%;margin-top:-3px"><i class="glyphicon glyphicon-star-empty"style="color:#ffcc00"></i> GUARDAR</button>
+     </div>
+   </div>
+ </section>
+ <section style="background-color:#f2f2f2">
+   <div>
+     <img src="{{item.galleria[0].url}}"style="width:100%;"/>
+   </div>
+   <div class="container">
+     <div class="col-md-12"style="margin-top:35px;margin-bottom:35px">
+       <h4 class="fB"style="font-size:12px;color:rgb(153,153,153)">PROPIEDAD EN VENTA</h4>
+       <p class="nD"style="font-size:53px;opacity:.8">Casa en la Herradura</p>
+       <p class="fL"style="font-size:45px;margin-top:-10px">$7,000,000</p>
+     </div>
+     <div class="col-md-6">
+       <h4 class="nD"style="25px">Naturaleza Urbana</h4>
+     </div>
+     <div class="col-md-3"style="margin-top:5px">
+       <h5 class="fB"style="font-size:13px;color:rgb(153,153,153)">CONSTRUCCIÓN</h5>
+     </div>
+     <div class="col-md-3"style="margin-top:5px;">
+       <h5 class="fB"style="font-size:13px;color:rgb(153,153,153)">TERRENO</h5>
+     </div>
+     <div class="col-md-6">
+       <hr style="background-color:#CCCCCC;height:1px">
+     </div>
+     <div class="col-md-6">
+       <hr style="background-color:#cccccc;height:1px">
+     </div>
+     <div class="col-md-6"style="margin-top:-17px">
+       <h5 class="fL"style="line-height:15px;font-size:16px">rtbeiurfpvonerpbuwuerpfnvweporvwetbvidcivoweirynbvwieb rfvwneruvbwe p i o j rn vd  jenrijvbweio dnvweponriu vbwepiojr nvdñcperjnviw eojrvdnieo urvvpjni qeurndvqeiu brveñqpndjvneq ipruuqepnkcpoqiermpuqenrdkcomqoirnvqenrvpnqrovq rovnqer vq rv qpr vpiqriqrv qeriv q v eroiv qer vjwe tpibpwe v foe rfvpib rijv qor vqje rboqnvóweókc vq´kor ve</h5>
+     </div>
+     <div class="col-md-6"style="margin-top:-28px">
+       <p style="font-size:24px;color:#cccccc"align=center>|</p>
+       <div class="col-md-6"style="margin-top:-20px">
+         <p class="nD"style="font-size:53px">1,230m</p>
+       </div>
+       <div class="col-md-6"style="margin-top:-20px">
+         <p class="nD"style="font-size:53px">800m</p>
+       </div>
+     </div>
+     <div class="col-md-6 col-md-offset-6"style="margin-bottom:-15px">
+       <h5 class="fB"style="font-size:13px;color:rgb(153,153,153)">DISTRIBUCIÓN INTERIOR</h5>
+     </div>
+     <div class="col-md-6 col-md-offset-6">
+       <hr style="background-color:#cccccc;height:1px">
+     </div>
+     <div class="col-md-6 col-md-offset-6"style="margin-top:-28px">
+       <p style="font-size:24px;color:#cccccc"align=center>|</p>
+     </div>
+     <div class="col-md-6 col-md-offset-6"style="margin-top:-20px">
+       <div class="col-md-6">
+         <p class="nD"style="font-size:30px;px;color:#a6a6a6">2 plantas</p>
+       </div>
+       <div class="col-md-6">
+         <p class="nD"style="font-size:30px;color:#a6a6a6">4 recámaras</p>
+       </div>
+     </div>
+     <div class="col-md-6 col-md-offset-6">
+       <hr style="background-color:#cccccc;height:1px">
+     </div>
+     <div class="col-md-6 col-md-offset-6"style="margin-top:-28px">
+       <p style="font-size:24px;color:#cccccc"align=center>|</p>
+     </div>
+     <div class="col-md-6 col-md-offset-6"style="margin-top:-20px">
+       <div class="col-md-6">
+         <p class="nD"style="font-size:30px;color:#a6a6a6">2 cocheras</p>
+       </div>
+       <div class="col-md-6">
+         <p class="nD"style="font-size:30px;color:#a6a6a6">3 baños</p>
+       </div>
+     </div>
+
+     <div class="col-md-6"style="background-color:#ffffff;margin-top:30px;box-shadow: 0px 0px 21px rgba(3, 3, 3, 0.15)">
+       <h3 class="nD"style="font-size25px">Contactar Agente</h3>
+       <h4 class="fL"style="font-size:16px">Antonio Cuellar +52(81) 8020 6375</h4>
+       <br>
+       <input type="text" class="form-control" placeholder="Nombre completo"style="background-color:#ffffff;height:35px;box-shadow:none;">
+       <br>
+       <input type="text" class="form-control" placeholder="E-Mail"style="background-color:#ffffff;height:35px;box-shadow:none;">
+       <br>
+       <textarea class="form-control" style="background-color:transparent" rows="5" id="comment"placeholder="Comentarios"></textarea>
+       <br>
+       <button class="btn" type="button"style="background-color:rgb(255,180,0);color:#000000;width:25%;margin-bottom:15px"><b style="letter-spacing:2px;font-size:14px">ENVIAR</b></button>
+     </div>
+     <div class="col-md-6"style="margin-top:30px">
+         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3594.6273551922777!2d-100.39389028516953!3d25.716759316736084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x866296ff79179727%3A0x8558218e92f06ada!2sJuan+E.+L%C3%B3pez+2800%2C+Cumbres+4%C2%BA.+Sector+Secc+C%2C+64619+Monterrey%2C+N.L.!5e0!3m2!1ses!2smx!4v1464673798515" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+     </div>
+     <div style="col-md-12">
+         <img src="{{item.galleria[0].url}}"style="width:100%;height:500px;margin-top:70px"/>
+     </div>
+   </div>
+   <div class="container">
+     <div class="col-md-6">
+       <img src="{{item.galleria[0].url}}"style="width:100%;height:300px;margin-top:70px"/>
+     </div>
+     <div class="col-md-6">
+       <img src="{{item.galleria[0].url}}"style="width:100%;height:300px;margin-top:70px"/>
+     </div>
+     <div class="col-md-12"style="margin-top:15px">
+       <hr style="background-color:#cccccc;height:1px">
+       <h5>Vistas recientemente</h5>
+     </div>
+     <div class="col-md-4"style="margin-bottom:20px">
+       <img src="http://www.defachadas.com/wp-content/uploads/2011/06/casas-modernas1.jpg"style="width:100%;height:300px;"/>
+     </div>
+     <div class="col-md-4">
+       <img src="http://www.defachadas.com/wp-content/uploads/2011/06/casas-modernas1.jpg"style="width:100%;height:300px;"/>
+     </div>
+     <div class="col-md-4">
+       <img src="http://www.defachadas.com/wp-content/uploads/2011/06/casas-modernas1.jpg"style="width:100%;height:300px;"/>
+     </div>
+   </div>
+ </section>
+{% endblock %}
