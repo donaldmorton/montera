@@ -40,11 +40,14 @@
 
       <div class="carousel-inner" role="listbox">
          <div class="item active">
+            <div style="font-family:FormularLight;bottom:90px;position:absolute;font-size:60px;color:white">{{inmueblesVenta[0].name}}</div>
             <div style="height:534px;background:url({{inmueblesVenta[0].galleria[0].url}})no-repeat center center fixed;  -webkit-background-size: cover;  -moz-background-size: cover;  -o-background-size: cover;background-size: cover;"></div>
          </div>
          {% for inmueble in inmueblesVenta %}
          <div class="item ">
-            <div style="height:534px;background:url({{inmueble.galleria[0].url}})no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;"></div>
+            <div class="fB" style="font-family:FormularLight;bottom:90px;position:absolute;font-size:60px;color:white">{{inmuebles.name}}</div>
+            <div style="height:534px;background:url({{inmueble.galleria[0].url}})no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;">
+            </div>
          </div>
          {% endfor %}
       </div>
