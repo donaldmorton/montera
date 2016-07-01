@@ -244,7 +244,7 @@
          {% for inmueble in inmueblesVenta %}
          <div class="col-md-6">
             <div class="thumbnail"style="padding:0px;box-shadow: 0px 0px 5px rgba(3, 3, 3, 0.11);height:400px">
-               <img class="Descripcion" style="height:250px" src="{{ inmueble.galleria[0].url }}">
+               <a href="{{url(inmueble)}}"><img class="Descripcion hover11" style="height:250px" src="{{ inmueble.galleria[0].url }}"></a>
                <div class="caption" style="padding:15px;padding-top:0px">
                   <div class="row">
                      <div class="col-md-12">
