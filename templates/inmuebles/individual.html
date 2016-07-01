@@ -32,7 +32,7 @@
    </div>
  </section>
  <section style="background-color:#f2f2f2">
-   <div class="container" style="padding:0px;">
+   <div class="container" style="padding:0px;" ng-controller="individualCtrl">
      <div class="col-md-5"style="margin-top:35px;margin-bottom:35px">
        <p class="nD"style="font-size:35pt;color:#3D3D3D">{{item.name}}</p>
        <p class="fL"style="font-size:14pt;margin-top:-10px;color:#3D3D3D">[[{{item.precio}}|currency]]</p>
@@ -72,7 +72,7 @@
         <div style="padding: 10px;background-color: white;height: 150px">
            {% for image in item.galleria| slice(0,3)%}
             <div class="col-md-4">
-               <a ng-click="imageView = '{{image.url}}'"><img src="{{image.url}}" style="width:100%"></a>
+               <a class="hover11" ng-click="imageView = '{{image.url}}'"><img src="{{image.url}}" style="width:100%"></a>
             </div>
             {% endfor %}
         </div>
