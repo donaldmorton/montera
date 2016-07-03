@@ -23,7 +23,7 @@
        </div>
      </div>
      <div class="col-md-1 col-md-offset-3"style="margin-top:7px;padding:5px">
-         <button class="btn fB" type="submit"style=";border-radius:2px;background-color:#ffffff;height:35px;font-size:16px;border-color:#a6a6a6;font-size:12px;margin-top:-3px">COMPARTIR</button>
+         <button data-toggle="modal" data-target="#modalCompartir"class="btn fB" type="submit"style=";border-radius:2px;background-color:#ffffff;height:35px;font-size:16px;border-color:#a6a6a6;font-size:12px;margin-top:-3px">COMPARTIR</button>
      </div>
      <div class="col-md-2"style="margin-top:7px;padding:5px">
        <button class="btn fB" type="submit"style=";border-radius:2px;background-color:#ffffff;height:35px;font-size:16px;border-color:#a6a6a6;font-size:12px;width:100%;margin-top:-3px;"><i class="glyphicon glyphicon-print"style="color:#a6a6a6"></i> IMPRIMIR</button>
@@ -143,4 +143,40 @@
      </div>
    </div>
  </section>
+
+ <!-- Modal -->
+ <div class="modal fade" id="modalCompartir" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <div class="modal-dialog" role="document">
+     <div class="modal-content"style="height:353px">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+         <center><h4 class="modal-title fB" style="font-size:14px;color:#3D3D3D;">Comparte esta propiedad con un amigo</h4></center>
+       </div>
+       <div class="modal-body">
+         <div class="row">
+           <div class="col-md-3">
+             <img src="[[imageView]]"style="width:150px;margin-top:10px"/>
+             <p class="fB"style="font-size:14px;color:#3D3D3D">{{item.name}}</p>
+             <p class="colonia fL"style="font-size:12px;color:#3D3D3D;margin-top:-7px">{{item.colonia}}</p>
+             <h3 style="margin-top:-5px;font-size:22px;color:#3D3D3D" class="fL pull-right">[[{{item.precio}}|currency:"$":0]]</h3>
+             <a href=""><img src="/static/images/facebook.png"style="width:30px;margin-top:37px"/></a>
+             <a href=""><img src="/static/images/p.png"style="width:30px;margin-left:15px;margin-top:36px"/></a>
+           </div>
+           <div class="col-md-8 col-md-offset-1">
+             <input type="text" class="form-control" aria-describedby="basic-addon1"style="background-color:transparent;border-color:#000000;margin-top:10px"placeholder="Usa comas para separar correos">
+             <input type="text" class="form-control" aria-describedby="basic-addon1"style="background-color:transparent;border-color:#000000;margin-top:10px"placeholder="Tu correo">
+             <textarea class="form-control" style="background-color:transparent;border-color:#000000;margin-top:10px" rows="5" id="comment"placeholder="Hola! Encontré esta propiedad en Montera. Revísala y dime que te parece."></textarea>
+             <div class="col-md-3">
+               <button class="btn" type="button"style="background-color:rgb(255,180,0);color:white;margin-top:10px;margin-left:-16px;width:95px"><b class="fB" style="letter-spacing:2px;font-size:11px">ENVIAR</b></button>
+             </div>
+             <div class="col-md-3">
+               <button type="button" class="btn btn-default fB" data-dismiss="modal"style="background-color:transparent;border-color:transparent;margin-top:12px;font-size:12px;color:#3D3D3D">Cancelar</button>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+
 {% endblock %}
