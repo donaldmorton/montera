@@ -13,7 +13,7 @@
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
 {% block content %}
  <section style="margin-top:-19px;background-color:#ffffff;">
-   <div class="container" style="padding:0px">
+   <div class="container" style="padding:0px;height:52px">
      <div class="col-md-4"style="background-color:#ffffff">
        <div class="input-group"style="border-right-color:#a6a6a6;border-left-color:#a6a6a6;margin-top:8px;margin-bottom:5px">
          <input type="text" class="form-control" placeholder="En que casa quieres vivir? "style="border-radius:2px;background-color:#ffffff;height:35px;border-color:#a6a6a6;box-shadow:none;border-right-color:transparent">
@@ -23,13 +23,13 @@
        </div>
      </div>
      <div class="col-md-1 col-md-offset-3"style="margin-top:7px;padding:5px">
-         <button data-toggle="modal" data-target="#modalCompartir"class="btn fB" type="submit"style=";border-radius:2px;background-color:#ffffff;height:35px;font-size:16px;border-color:#a6a6a6;font-size:12px;margin-top:-3px">COMPARTIR</button>
+         <button data-toggle="modal" data-target="#modalCompartir"class="btn fB" type="submit"style=";border-radius:5px;background-color:#ffffff;height:35px;font-size:16px;border-color:#a6a6a6;font-size:12px;margin-top:-3px;width:150px"><img style="height: 28px;margin-top:-3px" src="/static/images/carta.svg"> COMPARTIR</button>
      </div>
      <div class="col-md-2"style="margin-top:7px;padding:5px">
-       <button class="btn fB" type="submit"style=";border-radius:2px;background-color:#ffffff;height:35px;font-size:16px;border-color:#a6a6a6;font-size:12px;width:100%;margin-top:-3px;"><i class="glyphicon glyphicon-print"style="color:#a6a6a6"></i> IMPRIMIR</button>
+         <button class="btn fB" type="submit"style=";border-radius:5px;background-color:#ffffff;height:35px;font-size:16px;border-color:#a6a6a6;font-size:12px;width:120px;margin-top:-3px;width:150px"><img style="height: 28px;margin-top:-3px" src="/static/images/impresora.svg"> IMPRIMIR</button>
      </div>
      <div class="col-md-2"style="margin-top:7px;padding:5px">
-       <button class="btn fB" type="submit"style=";border-radius:2px;background-color:#ffffff;height:35px;font-size:16px;border-color:#a6a6a6;font-size:12px;width:100%;margin-top:-3px"><i class="glyphicon glyphicon-star-empty"style="color:#ffcc00"></i> GUARDAR</button>
+         <button data-toggle="modal" data-target="#modalGuardar"class="btn fB" type="submit"style=";border-radius:5px;background-color:#ffffff;height:35px;font-size:16px;border-color:#a6a6a6;font-size:12px;width:120px;margin-top:-3px;width:150px"><img style="height: 28px;margin-top:-3px" src="/static/images/pin.svg"> GUARDAR</button>
      </div>
    </div>
  </section>
@@ -108,7 +108,7 @@
        <br>
        <input type="text" class="form-control" placeholder="Nombre completo"style="background-color:#ffffff;height:35px;box-shadow:none;">
        <br>
-       <input type="text" class="form-control" placeholder="E-Mail"style="background-color:#ffffff;height:35px;box-shadow:none;">
+       <input type="text" class="form-control" placeholder="Correo electrónico"style="background-color:#ffffff;height:35px;box-shadow:none;">
        <br>
        <textarea class="form-control" style="background-color:transparent" rows="5" id="comment"placeholder="Comentarios"></textarea>
        <br>
@@ -171,6 +171,33 @@
              </div>
              <div class="col-md-3">
                <button type="button" class="btn btn-default fB" data-dismiss="modal"style="background-color:transparent;border-color:transparent;margin-top:12px;font-size:12px;color:#3D3D3D">Cancelar</button>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+
+ <!-- Modal -->
+ <div class="modal fade" id="modalGuardar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <div class="modal-dialog" role="document">
+     <div class="modal-content">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+         <center><h4 class="modal-title fB" style="font-size:14px;color:#3D3D3D;">Propiedad guardada</h4></center>
+       </div>
+       <div class="modal-body">
+         <div class="row">
+           <div class="col-md-12">
+             <center><p class="fL"style="font-size:11px;color:#3D3D3D">Recibe alertas de esta propiedad</p></center>
+             <input type="text" class="form-control" aria-describedby="basic-addon1"style="background-color:transparent;border-color:#000000;margin-top:10px;font-size:11px"placeholder="Nombre completo">
+             <input type="text" class="form-control" aria-describedby="basic-addon1"style="background-color:transparent;border-color:#000000;margin-top:10px;font-size:11px"placeholder="Correo electrónico">
+             <div class="col-md-3 col-md-offset-3">
+               <button type="button" class="btn btn-default fB" data-dismiss="modal"style="background-color:transparent;border-color:transparent;margin-top:12px;font-size:12px;color:#3D3D3D">Quizás luego</button>
+             </div>
+             <div class="col-md-3">
+               <button class="btn" type="button"style="background-color:rgb(255,180,0);color:white;margin-top:10px;margin-left:-16px;width:95px"><b class="fB" style="letter-spacing:2px;font-size:11px">ENVIAR</b></button>
              </div>
            </div>
          </div>
