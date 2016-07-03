@@ -14,9 +14,9 @@
      <!-- Collect the nav links, forms, and other content for toggling -->
      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
        <ul class="nav navbar-nav navbar-right">
-         <li><a href="/inmobiliaria"class="navbar1 fB"style="color:#515151;font-size:13px">INMOBILIARIA </a></li>
-         <li><a href="/constructora"class="navbar1 fB" style="color:#515151;font-size:13px">CONSTRUCTORA </a></li>
-         <li><a href="/favoritos"class="navbar1 fB" style="color:#515151;font-size:13px">FAVORITOS </a></li>
+         <li><a href="/inmobiliaria"class="navbar1 fB"style="color:#3D3D3D;font-size:13px;letter-spacing:0.1em">INMOBILIARIA </a></li>
+         <li><a href="/constructora"class="navbar1 fB" style="color:#3D3D3D;font-size:13px;letter-spacing:0.1em">CONSTRUCTORA </a></li>
+         <li><a class="navbar1 fB"ng-click="favoritesShow=!favoritesShow" style="color:#3D3D3D;font-size:13px;letter-spacing:0.1em">FAVORITOS </a></li>
          <li ng-show="searchShow">
             <input type="text" class="form-control" placeholder="En que casa quieres vivir?" style="font-family: formularLight;border-radius: 2px;background-color: #ffffff;height: 35px;border-color: #a6a6a6;box-shadow: none;/* border-right-color: transparent; */margin-top: 8px;">
          </li>
@@ -25,3 +25,33 @@
      </div><!-- /.navbar-collapse -->
    </div><!-- /.container-fluid -->
 </nav>
+<div class="col-md-4 col-md-offset-8"ng-show="favoritesShow"style="background-color:#f2f2f2;margin-top:-19px;position:fixed;z-index:1000">
+
+ <ul class="nav nav-tabs" role="tablist">
+   <li role="presentation"class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"class="fB"style="font-size:14px;line-height:22px;color:#3D3D3D;margin-left:-16px">Propiedades Favoritas</a></li>
+   <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"class="fL"style="font-size:14px;line-height:22px;color:#3D3D3D">Búsquedas favoritas</a></li>
+ </ul>
+
+ <!-- Tab panes -->
+ <div class="tab-content">
+   <div role="tabpanel" class="tab-pane active" id="home">
+     <div class="row">
+       <div class="col-md-12"style=";background-color:#FFFFFF">
+       <div class="col-md-6"style="margin-top:10px">
+         <img src="http://media24.liverpool.com.mx/web/images/products/es_MX/xl/1012535151_15p.jpg"style="width:85%;margin-bottom:10px"/>
+       </div>
+       <div class="col-md-6"style="margin-top:25px">
+         <p class="fB"style="font-size:13px;color:#3D3D3D">Casa San Agustín</p>
+         <p class="fL"style="font-size:11px;color:#3D3D3D">Colonia Hacienda San Agustín</p>
+         <p class="fL"style="font-size:11px;color:#3D3D3D;margin-top:-9px">$7,000,000</p>
+         <p class="fL"style="font-size:11px;color:#3D3D3D;margin-top:-10px">3 recámaras</p>
+         <p class="fL"style="font-size:11px;color:#3D3D3D;margin-top:-10px">4 baños</p>
+       </div>
+     </div>
+     </div>
+   </div>
+   <div role="tabpanel" class="tab-pane" id="profile">
+
+   </div>
+   </div>
+</div>

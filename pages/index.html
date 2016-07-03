@@ -15,13 +15,12 @@
 {% extends "templates/partials/base.html" %}
 {% set inmueblesVenta = cms.inmuebles |where('tipo_contrato','Venta') |slice(0,6)%}
 {% set inmueblesRenta = cms.inmuebles |where('tipo_contrato','Renta') |slice(0,6)%}
-{% set home = cms.home %}
 
 {# This sets our page <title>. It will append "- Homepage" to the site title defined in base. #}
    {% block title %}{% parent %} - Homepage{% endblock %}
 
    {% block content %}
-   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"style="margin-top:-21px">
+   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"style="margin-top:-21px;height:534px">
       <ol class="carousel-indicators">
          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
@@ -29,23 +28,26 @@
          <li data-target="#carousel-example-generic" data-slide-to="3"></li>
       </ol>
       <div style="position:absolute;z-index: 100;width:100%;height: 100%;background-color: rgba(0, 0, 0, 0.43);">
-         <center style="margin-top:10%;"><h1 class="nD" style="color:white;font-size:60px">{{home.titulo|safe}}</h1></center>
+         <center style="margin-top:10%;"><h1 class="nD" style="color:white;font-size:53px;letter-spacing:2px;line-height:53px">Encontramos la casa <br>que siempre soñaste.</h1></center>
          <br>
          <div class="input-group" style="width: 40%;margin-left:30%">
-            <input type="text" class="form-control" placeholder="En donde quieres vivir?" style="font-family:formularLight;font-size:13pt;border-radius: 1px;border-bottom: 3px solid rgb(255, 185, 31);height: 50px;">
+            <input type="text" class="form-control" placeholder="En donde quieres vivir?" style="font-family:formularLight;font-size:14pt;border-radius: 1px;border-bottom: 3px solid rgb(255, 185, 31);height: 50px;color:#979797">
             <span class="input-group-btn">
-               <button class="btn" type="button"style="border-top-right-radius: 3px;border-bottom-right-radius: 3px;height: 50px;background-color:#febe00;color:white"><b style="letter-spacing:1px;font-size:14px;font-family:FormularBold">BUSCAR <img style="height:17px"src="/static/images/search.svg"></b></button>
+               <button class="btn" type="button"style="border-top-right-radius: 3px;border-bottom-right-radius: 3px;height: 50px;background-color:#febe00;color:white"><b style="letter-spacing:0.2em;font-size:13px;font-family:FormularBold">BUSCAR <img style="height:17px"src="/static/images/search.svg"></b></button>
             </span>
          </div>
       </div>
 
       <div class="carousel-inner" role="listbox">
          <div class="item active">
+            <div style="font-family:FormularLight;bottom:90px;position:absolute;font-size:60px;color:white">{{inmueblesVenta[0].name}}</div>
             <div style="height:534px;background:url({{inmueblesVenta[0].galleria[0].url}})no-repeat center center fixed;  -webkit-background-size: cover;  -moz-background-size: cover;  -o-background-size: cover;background-size: cover;"></div>
          </div>
-         {% for inmueble in home.relationship %}
-         <div class="item ">
-            <div style="height:534px;background:url({{inmueble.galleria[0].url}})no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;"></div>
+         {% for inmueble in inmueblesVenta %}
+         <div class="item " ng-init="casaActiva='{{inmueble.name}}'">
+            <div class="fB" style="font-family:FormularLight;bottom:90px;position:absolute;font-size:60px;color:white">{{inmuebles.name}}</div>
+            <div style="height:534px;background:url({{inmueble.galleria[0].url}})no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;">
+            </div>
          </div>
          {% endfor %}
       </div>
@@ -63,33 +65,33 @@
       <div class="container">
          <div class="col-md-12">
             <br>
-            <h2 class="nD"style="font-size:25px">Propiedades en Venta </h2>
+            <h2 class="nD"style="font-size:25px;color:#000000;letter-spacing:1px">Propiedades en Venta </h2>
          </div>
          {% for inmueble in inmueblesVenta %}
          <div class="col-md-4">
-            <div class="thumbnail"style="padding:0px;box-shadow: 0px 0px 5px rgba(3, 3, 3, 0.11)">
-               <a href="{{url(inmueble)}}"><img class="Descripcion" style="height:250px" src="{{ inmueble.galleria[0].url }}"></a>
+            <div class="thumbnail"style="padding:0px;box-shadow: 0px 0px 5px rgba(3, 3, 3, 0.11);height:400px">
+               <a href="{{url(inmueble)}}"><img class="Descripcion hover11" style="height:250px" src="{{ inmueble.galleria[0].url }}"></a>
                <div class="caption" style="padding:15px;padding-top:0px">
                   <div class="row">
                      <div class="col-md-12">
                         <table class="table" style="margin:0px">
                            <tr>
                               <td>
-                                 <b>{{inmueble.name}}</b>
-                                 <p class="colonia">{{inmueble.colonia}}</p>
+                                 <p class="fB"style="font-size:14px;letter-spacing:1px;color:#3D3D3D">{{inmueble.name}}</p>
+                                 <p class="colonia fL"style="font-size:12px;color:#3D3D3D;margin-top:-11px">{{inmueble.colonia}}</p>
                               </td>
                               <td>
-                                 <h3 style="margin-top:11px" class="fL pull-right">[[{{inmueble.precio}}|currency:"$":0]]</h3>
+                                 <h3 style="margin-top:2px;font-size:22px;color:#3D3D3D" class="fL pull-right">[[{{inmueble.precio}}|currency:"$":0]]</h3>
                               </td>
                            </tr>
                         </table>
                      </div>
                      <div class="col-md-12 col-sm-12"style="margin-top:0px">
                         <hr style="margin-top:0px">
-                        <a href="{{url(inmueble)}}"><div class="btn botonGris" style="border: 1px solid;border-radius: 0px;" role="button">MÁS INFORMACIÓN</div></a>
+                        <a href="{{url(inmueble)}}"><div class="btn botonGris fB" style="border: 1px solid;border-radius: 0px;font-size:12px;letter-spacing:0.2em;color:#979797" role="button"><p style="margin-top:4px">MÁS INFORMACIÓN</p></div></a>
                         <div style="display:inline;float: right;">
                            <div id="carta"data-toggle="modal" data-target="#myModal"class="btn botonGris" style="border: 1px solid;border-radius: 0px;width: 45px;padding: 3px;padding-top: 6px;margin-right:10px" type="submit"style="height:34px;width:40px"><img src="/static/images/carta.svg"style="width:100%;margin-top:-5px;opacity:.8"/></div>
-                           <div id="tachuela"class="btn botonGris" style="border: 1px solid;border-radius: 0px;width: 45px;padding: 3px;padding-top: 6px" type="submit"style="height:34px;width:40px"><img src="/static/images/tachuela.svg"style="width:92%;margin-top:-4px;opacity:.4"/></div>
+                           <div id="tachuela"class="btn botonGris" style="border: 1px solid;border-radius: 0px;width: 45px;padding: 3px;padding-top: 6px" type="submit"style="height:34px;width:40px"><img src="/static/images/tachuela.svg"style="width:92%;margin-top:-9px;opacity:.8"/></div>
                         </div>
                      </div>
                   </div>
@@ -102,33 +104,33 @@
       <div class="container">
          <div class="col-md-12">
             <br>
-            <h2 class="nD"style="font-size:25px">Propiedades en Renta</h2>
+            <h2 class="nD"style="font-size:25px;color:#000000;letter-spacing:1px">Propiedades en Renta[[casaActiva]]</h2>
          </div>
          {% for inmueble in inmueblesRenta %}
          <div class="col-md-4">
-            <div class="thumbnail"style="padding:0px;box-shadow: 0px 0px 5px rgba(3, 3, 3, 0.11)">
-               <img class="Descripcion" style="height:250px" src="{{ inmueble.galleria[0].url }}">
+            <div class="thumbnail"style="padding:0px;box-shadow: 0px 0px 5px rgba(3, 3, 3, 0.11);height:400px">
+               <a href="{{url(inmueble)}}"><img class="Descripcion hover11" style="height:250px" src="{{ inmueble.galleria[0].url }}"></a>
                <div class="caption" style="padding:15px;padding-top:0px">
                   <div class="row">
                      <div class="col-md-12">
                         <table class="table" style="margin:0px">
                            <tr>
                               <td>
-                                 <b>{{inmueble.name}}</b>
-                                 <p class="colonia">{{inmueble.colonia}}</p>
+                                 <b class="fB"style="font-size:14px;letter-spacing:1px;color:#3D3D3D">{{inmueble.name}}</b>
+                                 <p class="colonia fL"style="font-size:12px;color:#3D3D3D;margin-top:-4px">{{inmueble.colonia}}</p>
                               </td>
                               <td>
-                                 <h3 style="margin-top:11px" class="fL pull-right">[[{{inmueble.precio}}|currency:"$":0]]</h3>
+                                 <h3 style="margin-top:2px;font-size:22px;color:#3D3D3D" class="fL pull-right">[[{{inmueble.precio}}|currency:"$":0]]</h3>
                               </td>
                            </tr>
                         </table>
                      </div>
                      <div class="col-md-12 col-sm-12"style="margin-top:0px">
                         <hr style="margin-top:0px">
-                        <a href="{{url(inmueble)}}"><div class="btn botonGris" style="border: 1px solid;border-radius: 0px;" role="button">MÁS INFORMACIÓN</div></a>
+                        <a href="{{url(inmueble)}}"><div class="btn botonGris fB" style="border: 1px solid;border-radius: 0px;font-size:12px;letter-spacing:0.2em;color:#979797" role="button"><p style="margin-top:6px">MÁS INFORMACIÓN</p></div></a>
                         <div style="display:inline;float: right;">
                            <div id="carta"data-toggle="modal" data-target="#myModal"class="btn botonGris" style="border: 1px solid;border-radius: 0px;width: 45px;padding: 3px;padding-top: 6px;margin-right:10px" type="submit"style="height:34px;width:40px"><img src="/static/images/carta.svg"style="width:100%;margin-top:-5px;opacity:.8"/></div>
-                           <div id="tachuela"class="btn botonGris" style="border: 1px solid;border-radius: 0px;width: 45px;padding: 3px;padding-top: 6px" type="submit"style="height:34px;width:40px"><img src="/static/images/tachuela.svg"style="width:92%;margin-top:-4px;opacity:.4"/></div>
+                           <div id="tachuela"class="btn botonGris" style="border: 1px solid;border-radius: 0px;width: 45px;padding: 3px;padding-top: 6px" type="submit"style="height:34px;width:40px"><img src="/static/images/tachuela.svg"style="width:92%;margin-top:-9px;opacity:.8"/></div>
                         </div>
                      </div>
                   </div>
@@ -140,24 +142,24 @@
 
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
          <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
+            <div class="modal-content"style="width:314px">
                <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <center><h4 class="modal-title" id="myModalLabel"style="color:#000000">Solicita información <br>sobre esta propiedad</h4></center>
+                  <center><h4 class="modal-title fB" id="myModalLabel"style="color:#000000;font-size:14px;line-height:22px;color:#3D3D3D">Solicita información sobre esta propiedad</h4></center>
                </div>
                <div class="modal-body">
-                  <input type="text" class="form-control" placeholder="Nombre completo"style="background-color:#ffffff;height:35px;box-shadow:none;">
+                  <input type="text" class="form-control fL" placeholder="Nombre completo"style="background-color:#ffffff;height:35px;box-shadow:none;font-size:12px;color:#ABB4BE;border-color:#000000">
                   <br>
-                  <input type="text" class="form-control" placeholder="E-Mail"style="background-color:#ffffff;height:35px;box-shadow:none;">
+                  <input type="text" class="form-control fL" placeholder="E-Mail"style="background-color:#ffffff;height:35px;box-shadow:none;font-size:12px;color:#ABB4BE;border-color:#000000">
                   <br>
-                  <textarea class="form-control" style="background-color:transparent" rows="5" id="comment"placeholder="Comentarios"></textarea>
+                  <textarea class="form-control fL" style="background-color:transparent;font-size:12px;color:#ABB4BE;border-color:#000000" rows="5" id="comment"placeholder="Comentarios"></textarea>
                   <br>
                   <label class="checkbox"style="margin-left:20px">
-                     <input type="checkbox" id="inlineCheckbox1" value="option1"><p style="color:#666666"> Quiero recibir alertas sobre esta propiedad, nuevos anuncios y promociones exclusivas.</p>
+                     <input type="checkbox" id="inlineCheckbox1" value="option1"><p class="fL"style="color:#3D3D3D;font-size:12px"> Quiero recibir alertas sobre esta propiedad, nuevos anuncios y promociones exclusivas.</p>
                   </label>
                </div>
                <div class="modal-footer">
-                  <center><button class="btn" type="button"style="background-color:rgb(255,180,0);color:white"><b style="letter-spacing:2px;font-size:14px">ENVIAR</b></button></center>
+                  <center><button class="btn" type="button"style="background-color:#F9BE00;color:white;"><b style="letter-spacing:0.2em;font-size:12px">ENVIAR</b></button></center>
                </div>
             </div>
          </div>

@@ -13,10 +13,10 @@
 {% block title %}{% parent %} - {{ item.name }}{% endblock %}
 {% block content %}
  <section style="margin-top:-19px;background-color:#ffffff;">
-   <div class="container" style="padding:0px">
+   <div class="container" style="padding:0px;height:52px">
      <div class="col-md-4"style="background-color:#ffffff">
        <div class="input-group"style="border-right-color:#a6a6a6;border-left-color:#a6a6a6;margin-top:8px;margin-bottom:5px">
-         <input type="text" class="form-control" placeholder="En que casa quieres vivir? "style="font-family:formularLight;border-radius:2px;background-color:#ffffff;height:35px;border-color:#a6a6a6;box-shadow:none;border-right-color:transparent">
+         <input type="text" class="form-control" placeholder="En que casa quieres vivir? "style="color:#3D3D3D;font-size:14px;font-family:formularBold;border-radius:2px;background-color:#ffffff;height:35px;border-color:#a6a6a6;box-shadow:none;border-right-color:transparent">
          <span class="input-group-btn">
            <button class="btn " type="button"style="border-radius:2px;background-color:transparent;border-color:#a6a6a6;height:35px;border-left-color:transparent"><i class="glyphicon glyphicon-search"style="color:#a6a6a6"></i></button>
          </span>
@@ -24,55 +24,55 @@
      </div>
      <div class="col-md-8"style="margin-top:7px;padding:5px">
         <div class="pull-right">
-         <button class="btn fB" type="submit"style=";border-radius:2px;background-color:#ffffff;height:35px;font-size:16px;border-color:#a6a6a6;font-size:12px;margin-top:-3px"><img style="height: 20px;" src="/static/images/carta.svg"> COMPARTIR</button>
-         <button class="btn fB" type="submit"style=";border-radius:2px;background-color:#ffffff;height:35px;font-size:16px;border-color:#a6a6a6;font-size:12px;width:120px;margin-top:-3px;"><img style="height: 20px;" src="/static/images/impresora.svg"> IMPRIMIR</button>
-         <button class="btn fB" type="submit"style=";border-radius:2px;background-color:#ffffff;height:35px;font-size:16px;border-color:#a6a6a6;font-size:12px;width:120px;margin-top:-3px"><img style="height: 20px;" src="/static/images/pin.svg"> GUARDAR</button>
+         <button data-toggle="modal" data-target="#modalCompartir"class="btn fB" type="submit"style=";border-radius:5px;background-color:#ffffff;height:35px;font-size:16px;border-color:#a6a6a6;font-size:12px;margin-top:-3px;width:150px"><img style="height: 28px;margin-top:-3px" src="/static/images/carta.svg"> COMPARTIR</button>
+         <button class="btn fB" type="submit"style=";border-radius:5px;background-color:#ffffff;height:35px;font-size:16px;border-color:#a6a6a6;font-size:12px;width:120px;margin-top:-3px;width:150px"><img style="height: 28px;margin-top:-3px" src="/static/images/impresora.svg"> IMPRIMIR</button>
+         <button data-toggle="modal" data-target="#modalGuardar"class="btn fB" type="submit"style=";border-radius:5px;background-color:#ffffff;height:35px;font-size:16px;border-color:#a6a6a6;font-size:12px;width:120px;margin-top:-3px;width:150px"><img style="height: 28px;margin-top:-3px" src="/static/images/pin.svg"> GUARDAR</button>
          </div>
      </div>
    </div>
  </section>
  <section style="background-color:#f2f2f2">
-   <div class="container" style="padding:0px;">
+   <div class="container" style="padding:0px;" ng-controller="individualCtrl">
      <div class="col-md-5"style="margin-top:35px;margin-bottom:35px">
-       <p class="nD"style="font-size:35pt;opacity:.8">{{item.name}}</p>
-       <p class="fL"style="font-size:14pt;margin-top:-10px">[[{{item.precio}}|currency]]</p>
+       <p class="nD"style="font-size:35pt;color:#3D3D3D">{{item.name}}</p>
+       <p class="fL"style="font-size:14pt;margin-top:-10px;color:#3D3D3D">[[{{item.precio}}|currency]]</p>
        <hr style="border-color: rgb(223, 223, 223);">
-       <span style="font-family:formularBold;font-family: formularBold;letter-spacing: 1.5px">CONSTRUCCION 2.500m2<br>
+       <span style="font-family:formularBold;letter-spacing:0.2em;font-size:12px;color:#3D3D3D">CONSTRUCCION 2.500m2<br>
        TERRENO 500m2</span><br><br><br>
-       <div class="col-md-6" style="font-family:formularLight;padding-left:0px">
+       <div class="col-md-6" style="font-family:formularLight;padding-left:0px;font-size:12px;color:#000000">
          Plantas: {{item.plantas}}<br>
          Medios Baños: {{item.banos}}<br>
          Cochera: {{item.cocheras}}<br>
          Terraza: {{item.terraza}}
        </div>
-       <div class="col-md-6"  style="font-family:formularLight;padding-left:0px">
+       <div class="col-md-6"  style="font-family:formularLight;padding-left:0px;font-size:12px;color:#000000">
          Colonia: {{item.colonia}}<br>
          Municipio:<br>
          Alberca<br>
        </div>
        <div class="col-md-12"  style="font-family:formularLight;padding-left:0px">
          <hr style="border-color: rgb(223, 223, 223);">
-         <p>{{ item.descripcion }}</p>
+         <p class="fL"style="font-size:14px;line-height:22px;color:#000000">{{ item.descripcion }}</p>
       </div>
         <div class="col-md-12"style="background-color:#ffffff;margin-top:30px;box-shadow: 0px 0px 21px rgba(3, 3, 3, 0.15)">
-          <h3 class="nD"style="font-size25px">Contactar Agente</h3>
-          <h4 class="fL"style="font-size:16px">Antonio Cuellar +52(81) 8020 6375</h4>
+          <h3 class="fB"style="font-size:14px;color:#3D3D3D">Solicitar más información</h3>
+          <h4 class="fL"style="font-size:14px;color:#3D3D3D">Antonio Cuellar +52(81) 8020 6375</h4>
           <br>
-          <input type="text" class="form-control" placeholder="Nombre completo"style="background-color:#ffffff;height:35px;box-shadow:none;">
+          <input type="text" class="form-control fL" placeholder="Nombre completo"style="background-color:#ffffff;height:35px;box-shadow:none;color:ABB4BE;font-size:12px">
           <br>
-          <input type="text" class="form-control" placeholder="E-Mail"style="background-color:#ffffff;height:35px;box-shadow:none;">
+          <input type="text" class="form-control fL" placeholder="Correo electrónico"style="background-color:#ffffff;height:35px;box-shadow:none;color:ABB4BE;font-size:12px">
           <br>
-          <textarea class="form-control" style="background-color:transparent" rows="5" id="comment"placeholder="Comentarios"></textarea>
+          <textarea class="form-control fL" style="background-color:transparent;color:ABB4BE;font-size:12px" rows="5" id="comment"placeholder="Escribe tu mensaje"></textarea>
           <br>
-          <button class="btn" type="button"style="background-color:rgb(255,180,0);color:#000000;width:25%;margin-bottom:15px"><b style="letter-spacing:2px;font-size:14px">ENVIAR</b></button>
+          <button class="btn" type="button"style="background-color:#F9BE00;color:#000000;width:25%;margin-bottom:15px"><b style="letter-spacing:0.2em;font-size:12px;color:#FFFFFF">ENVIAR</b></button>
         </div>
      </div>
-     <div class="col-md-7"style="margin-top:0px;margin-bottom:35px">
-        <img src="{{item.galleria[0].url}}" style="width:100%">
+     <div class="col-md-7"style="margin-top:0px;margin-bottom:35px" ng-init="imageView ='{{item.galleria[0].url}}'">
+        <img ng-src="[[imageView]]" style="width:100%;height:467px">
         <div style="padding: 10px;background-color: white;height: 150px">
            {% for image in item.galleria| slice(0,3)%}
-            <div class="col-md-4 col-xs-4">
-               <img src="{{image.url}}" style="width:100%">
+            <div class="col-md-4">
+               <a class="hover11" ng-click="imageView = '{{image.url}}'"><img src="{{image.url}}" style="width:100%"></a>
             </div>
             {% endfor %}
         </div>
@@ -82,7 +82,7 @@
    <div class="container">
      <div class="col-md-12"style="margin-top:15px">
        <hr style="background-color:#cccccc;height:1px">
-       <h5>Vistas recientemente</h5>
+       <h5 class="fB" style="font-size:12px;letter-spacing:0.2em;color:#3D3D3D">VISTAS RECIENTEMENTE</h5>
      </div>
      <div class="col-md-4"style="margin-bottom:20px">
        <img src="{{item.galleria[0].url}}"style="width:100%;height:300px;"/>
@@ -95,4 +95,67 @@
      </div>
    </div>
  </section>
+
+<!-- Modal -->
+<div class="modal fade" id="modalCompartir" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content"style="height:353px">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <center><h4 class="modal-title fB" style="font-size:14px;color:#3D3D3D;">Comparte esta propiedad con un amigo</h4></center>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-3">
+            <img src="[[imageView]]"style="width:150px;margin-top:10px"/>
+            <p class="fB"style="font-size:14px;color:#3D3D3D">{{item.name}}</p>
+            <p class="colonia fL"style="font-size:12px;color:#3D3D3D;margin-top:-7px">{{item.colonia}}</p>
+            <h3 style="margin-top:-5px;font-size:22px;color:#3D3D3D" class="fL pull-right">[[{{item.precio}}|currency:"$":0]]</h3>
+            <a href=""><img src="/static/images/facebook.png"style="width:30px;margin-top:37px"/></a>
+            <a href=""><img src="/static/images/p.png"style="width:30px;margin-left:15px;margin-top:36px"/></a>
+          </div>
+          <div class="col-md-8 col-md-offset-1">
+            <input type="text" class="form-control" aria-describedby="basic-addon1"style="background-color:transparent;border-color:#000000;margin-top:10px"placeholder="Usa comas para separar correos">
+            <input type="text" class="form-control" aria-describedby="basic-addon1"style="background-color:transparent;border-color:#000000;margin-top:10px"placeholder="Tu correo">
+            <textarea class="form-control" style="background-color:transparent;border-color:#000000;margin-top:10px" rows="5" id="comment"placeholder="Hola! Encontré esta propiedad en Montera. Revísala y dime que te parece."></textarea>
+            <div class="col-md-3">
+              <button class="btn" type="button"style="background-color:rgb(255,180,0);color:white;margin-top:10px;margin-left:-16px;width:95px"><b class="fB" style="letter-spacing:2px;font-size:11px">ENVIAR</b></button>
+            </div>
+            <div class="col-md-3">
+              <button type="button" class="btn btn-default fB" data-dismiss="modal"style="background-color:transparent;border-color:transparent;margin-top:12px;font-size:12px;color:#3D3D3D">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalGuardar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <center><h4 class="modal-title fB" style="font-size:14px;color:#3D3D3D;">Propiedad guardada</h4></center>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+            <center><p class="fL"style="font-size:11px;color:#3D3D3D">Recibe alertas de esta propiedad</p></center>
+            <input type="text" class="form-control" aria-describedby="basic-addon1"style="background-color:transparent;border-color:#000000;margin-top:10px;font-size:11px"placeholder="Nombre completo">
+            <input type="text" class="form-control" aria-describedby="basic-addon1"style="background-color:transparent;border-color:#000000;margin-top:10px;font-size:11px"placeholder="Correo electrónico">
+            <div class="col-md-3 col-md-offset-3">
+              <button type="button" class="btn btn-default fB" data-dismiss="modal"style="background-color:transparent;border-color:transparent;margin-top:12px;font-size:12px;color:#3D3D3D">Quizás luego</button>
+            </div>
+            <div class="col-md-3">
+              <button class="btn" type="button"style="background-color:rgb(255,180,0);color:white;margin-top:10px;margin-left:-16px;width:95px"><b class="fB" style="letter-spacing:2px;font-size:11px">ENVIAR</b></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 {% endblock %}

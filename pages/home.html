@@ -29,45 +29,17 @@
         {{ cms.home.last_updated|date('F d Y') }}
       </li>
       <li>
-        <strong>titulo: </strong>
-        {{ cms.home.titulo|safe }}
-      </li>
-      <li>
-        <strong>Preview URL: </strong>
-        {{ cms.home.preview_url }}
-      </li>
-      <li>
-        <strong>Slug: </strong>
-        {{ cms.home.slug }}
-      </li>
-      <li>
-        <strong>Relationship: </strong>
-        {# Relationship. Note that use the label you set for the relation, not the content-type name. #}
-        {% for relation in cms.home.relationship %}
-          {# You can ouput more than just the name. Feel free to output more fields from the CMS. #}
-          <a href="{{ url(relation) }}">{{ relation.name }}</a>{% if not loop.last %},{% endif %}
-        {% endfor %}
-      </li>
-      <li>
-        <strong>slider: </strong>
-        {# Loop of your Repeatable Form items. Remember, you can sort the order in your CMS if you need. #}
+        <strong>Gallery: </strong>
+        {# You can pull out a lot more information from the gallery property. Info here: #}
+        {# http://www.webhook.com/docs/widget-template-reference/#image #}
         <ul>
-        {% for row in cms.home.slider %}
+          {% for image in cms.home.gallery %}
             <li>
-              <strong>Relationship: </strong>
-              {# Relationship. Note that use the label you set for the relation, not the content-type name. #}
-                {% for relation in row.relationship %}
-                  {# You can ouput more than just the name. Feel free to output more fields from the CMS. #}
-                  <a href="{{ url(relation) }}">{{ relation.name }}</a>{% if not loop.last %},{% endif %}
-                {% endfor %}
+              {# You can get the raw image url by accessing image.url #}
+              <img src="{{ image|imageSize(200, 200) }}">
+              <div>{{ image.caption }}</div>
             </li>
-            <li>
-              <strong>Image: </strong>
-              {# You can pull out a lot more information from the image property. Info here: #}
-                {# http://www.webhook.com/docs/widget-template-reference/#image #}
-                <img src="{{ row.image|imageSize(200, 200) }}" />
-            </li>
-        {% endfor %}
+          {% endfor %}
         </ul>
       </li>
   </ul>
